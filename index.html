@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegant Gallery</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/grid.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <div class="nav-container">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="menu-icon"></span>
+          </button>
+          <div class="nav-items">
+            <button class="nav-button">Home</button>
+            <button class="nav-button">Vogels</button>
+            <div class="dropdown">
+              <button class="nav-button dropdown-toggle">Wedstrijden</button>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">1e wedstrijd</a>
+                <a href="#" class="dropdown-item">2e wedstrijd</a>
+                <a href="#" class="dropdown-item">3e wedstrijd</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <header>
+          <h1>Elegant Gallery</h1>
+          <p class="subtitle">A curated collection of breathtaking landscapes</p>
+        </header>
+        
+        <main class="gallery-grid">
+          <!-- Text content area (columns 1-2) -->
+          <div class="text-content">
+            <div class="text-container">
+              <h2>The Beauty of Nature</h2>
+              <p>Explore our collection of stunning landscapes captured from around the world. Each image tells a story of natural beauty and wonder.</p>
+              <p>Our photographers travel to remote locations to capture these breathtaking moments, bringing you closer to nature's masterpieces.</p>
+              
+              <h3>About the Collection</h3>
+              <p>This collection features works from award-winning photographers who have dedicated their lives to capturing the perfect moments in nature.</p>
+              <p>From majestic mountains to serene beaches, these images showcase the diversity and grandeur of our natural world.</p>
+              
+              <h3>How to Browse</h3>
+              <p>Hover over the thumbnails on the right to preview images in the main display area. Each image has been carefully selected to provide a unique perspective on natural landscapes.</p>
+              
+              <div class="image-details">
+                <h4 id="image-title">Mountain Serenity</h4>
+                <p id="image-description">A peaceful mountain lake reflecting the surrounding peaks at sunrise.</p>
+                <p id="image-location">Location: <span id="image-location-text">Swiss Alps</span></p>
+                <p id="image-photographer">Photographer: <span id="image-photographer-name">Alex Rivers</span></p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Main image display area (columns 3-4) -->
+          <div class="main-image-container">
+            <div class="main-image-wrapper">
+              <img id="main-image" src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg" alt="Mountain Serenity">
+            </div>
+          </div>
+          
+          <!-- Thumbnails area (column 5) -->
+          <div class="thumbnails-container">
+            <div class="thumbnail active" data-index="0" data-title="Mountain Serenity" data-description="A peaceful mountain lake reflecting the surrounding peaks at sunrise." data-location="Swiss Alps" data-photographer="Alex Rivers">
+              <img src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg" alt="Mountain thumbnail">
+            </div>
+            <div class="thumbnail" data-index="1" data-title="Desert Sunset" data-description="The vast expanse of a desert landscape bathed in the golden light of sunset." data-location="Sahara Desert" data-photographer="Maya Johnson">
+              <img src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg" alt="Desert thumbnail">
+            </div>
+            <div class="thumbnail" data-index="2" data-title="Coastal Dreams" data-description="Waves gently lapping against a rocky coastline under a vibrant sky." data-location="Big Sur, California" data-photographer="Thomas Wright">
+              <img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg" alt="Coast thumbnail">
+            </div>
+            <div class="thumbnail" data-index="3" data-title="Forest Mist" data-description="A mystical forest shrouded in morning mist, with sunlight filtering through the trees." data-location="Black Forest, Germany" data-photographer="Emma Chen">
+              <img src="https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg" alt="Forest thumbnail">
+            </div>
+            <div class="thumbnail" data-index="4" data-title="Arctic Wonder" data-description="The ethereal beauty of northern lights dancing across the Arctic sky." data-location="Iceland" data-photographer="Lars Peterson">
+              <img src="https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg" alt="Arctic thumbnail">
+            </div>
+          </div>
+        </main>
+        
+        <footer>
+          <p>&copy; 2025 Elegant Gallery. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="/scripts/gallery.js"></script>
+    <script type="module" src="/scripts/nav.js"></script>
+  </body>
+</html>
