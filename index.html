@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elegant Gallery</title>
+    <title>Klimda.nl Sportfotografie</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/grid.css">
     <link rel="stylesheet" href="/styles/responsive.css">
@@ -19,13 +19,22 @@
           </button>
           <div class="nav-items">
             <button class="nav-button">Home</button>
-            <button class="nav-button">Vogels</button>
+            <div class="dropdown">
+            <button class="nav-button dropdown-toggle">Vogels</button>
+             <div class="dropdown-content">
+                <a class="dropdown-item" href="www.klimda.nl/roofvogels">Roofvogels</a>
+                <a class="dropdown-item" href="www.klimda.nl/zangvogels">Zangvogels</a>
+			          <a class="dropdown-item" href="www.klimda.nl/watervogels">Watervogels</a>
+             </div> 
+             </div>  
             <div class="dropdown">
               <button class="nav-button dropdown-toggle">Wedstrijden</button>
               <div class="dropdown-content">
-                <a href="#" class="dropdown-item">1e wedstrijd</a>
-                <a href="#" class="dropdown-item">2e wedstrijd</a>
-                <a href="#" class="dropdown-item">3e wedstrijd</a>
+                <a class="dropdown-item" href="ck-baan-2024/index.html">Clubkampioenschap baan 2024</a>
+                <a class="dropdown-item" href="ck-cross-2025/index.html">Clubkampioenschap cross 2025</a>
+			          <a class="dropdown-item" href="cd-comp2-2025/index.html">CD competitie 2e wedstrijd 2025</a>
+			          <a class="dropdown-item" href="MilaTrackMeeting-2025/index.html">Energie Mila Track Meeting 2025</a>
+		            <a class="dropdown-item" href="http://myleneimholz.nl/index.php/sportfotografie/" target="_blank">Sportfoto's Mylene Imholz</a>
               </div>
             </div>
           </div>
@@ -34,24 +43,25 @@
 
       <div class="container">
         <header>
-          <h1>Elegant Gallery</h1>
-          <p class="subtitle">A curated collection of breathtaking landscapes</p>
+          <h1>Sportfotografie</h1>
+          <p class="subtitle">Een collectie foto's van Energie atleten </p>
         </header>
         
         <main class="gallery-grid">
           <!-- Text content area (columns 1-2) -->
           <div class="text-content">
             <div class="text-container">
-              <h2>The Beauty of Nature</h2>
-              <p>Explore our collection of stunning landscapes captured from around the world. Each image tells a story of natural beauty and wonder.</p>
-              <p>Our photographers travel to remote locations to capture these breathtaking moments, bringing you closer to nature's masterpieces.</p>
+              <h2>Welkom</h2>
+              <p>Hier kun je foto's vinden van diverse wedstrijden. Via de menu balk kun je de foto's per wedstrijd bekijken en downloaden in een beperkt formaat. De foto's zijn voorzien van een klein watermerkje.</p>
+              <p>Mocht je de foto's in een groter formaat en zelfs zonder watermerk willen hebben, bv voor het afdrukken op foto papier, dan zijn deze tegen een geringe bijdrage aan te vragen via email. Aanvragen kan via onderstaande contact link. Vermeld hierbij het nummer van de foto, de wedstijd, en eventueel de naam van de persoon op de foto. </p>
               
-              <h3>About the Collection</h3>
-              <p>This collection features works from award-winning photographers who have dedicated their lives to capturing the perfect moments in nature.</p>
-              <p>From majestic mountains to serene beaches, these images showcase the diversity and grandeur of our natural world.</p>
               
-              <h3>How to Browse</h3>
-              <p>Hover over the thumbnails on the right to preview images in the main display area. Each image has been carefully selected to provide a unique perspective on natural landscapes.</p>
+              <p>Het maken van de foto's doe ik geheel vrijwillig en ik ontvang hier verder geen vergoeding voor. Het verwerken van de foto's kost veel tijd, vandaar deze geringe onkosten vergoeding. De vergoeding wordt weer gebruikt om de kwaliteit van de foto's te verbeteren. Dit gebeurt onder andere door te investeren in betere apparatuur. </p>
+              <p>Het downloaden van de kleine formaat foto's mag en juich ik zelfs toe. Het publiceren van de foto's mag ook, mits voorzien van watermerk.</p>
+              <p> Voor alle gemaakt foto's geldt   ©  Auteur: K.Imholz klimda.nl </p>
+              
+              <h3>Contact</h3>
+              <p><p> klik hier voor: <a id="contact" href="" >Contact via email</a></P></p>
               
               <div class="image-details">
                 <h4 id="image-title">Mountain Serenity</h4>
@@ -65,36 +75,47 @@
           <!-- Main image display area (columns 3-4) -->
           <div class="main-image-container">
             <div class="main-image-wrapper">
-              <img id="main-image" src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg" alt="Mountain Serenity">
+              <img id="main-image" src="https://www.klimda.nl/atletiek/images/Gallery00061.jpg" alt="Mountain Serenity">
             </div>
           </div>
           
           <!-- Thumbnails area (column 5) -->
           <div class="thumbnails-container">
-            <div class="thumbnail active" data-index="0" data-title="Mountain Serenity" data-description="A peaceful mountain lake reflecting the surrounding peaks at sunrise." data-location="Swiss Alps" data-photographer="Alex Rivers">
-              <img src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg" alt="Mountain thumbnail">
+              <div class="thumbnail active" data-index="0" data-title="Mountain Serenity" data-description="A peaceful mountain lake reflecting the surrounding peaks at sunrise." data-location="Swiss Alps" data-photographer="Alex Rivers">
+              <img src="https://www.klimda.nl/atletiek/images/Gallery00061.jpg" alt="Mountain thumbnail">
             </div>
-            <div class="thumbnail" data-index="1" data-title="Desert Sunset" data-description="The vast expanse of a desert landscape bathed in the golden light of sunset." data-location="Sahara Desert" data-photographer="Maya Johnson">
-              <img src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg" alt="Desert thumbnail">
+            
+            <div class="thumbnail active" data-index="1" data-title="Mountain Serenity" data-description="A peaceful mountain lake reflecting the surrounding peaks at sunrise." data-location="Swiss Alps" data-photographer="Alex Rivers">
+              <img src="https://www.klimda.nl/atletiek/images/Gallery00057.jpg" alt="Mountain thumbnail">
             </div>
-            <div class="thumbnail" data-index="2" data-title="Coastal Dreams" data-description="Waves gently lapping against a rocky coastline under a vibrant sky." data-location="Big Sur, California" data-photographer="Thomas Wright">
-              <img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg" alt="Coast thumbnail">
+            <div class="thumbnail" data-index="3" data-title="Coastal Dreams" data-description="Waves gently lapping against a rocky coastline under a vibrant sky." data-location="Big Sur, California" data-photographer="Thomas Wright">
+              <img src="https://www.klimda.nl/atletiek/images/Gallery00065.jpg" alt="Coast thumbnail">
             </div>
-            <div class="thumbnail" data-index="3" data-title="Forest Mist" data-description="A mystical forest shrouded in morning mist, with sunlight filtering through the trees." data-location="Black Forest, Germany" data-photographer="Emma Chen">
-              <img src="https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg" alt="Forest thumbnail">
+            <div class="thumbnail" data-index="4" data-title="Forest Mist" data-description="A mystical forest shrouded in morning mist, with sunlight filtering through the trees." data-location="Black Forest, Germany" data-photographer="Emma Chen">
+              <img src="https://www.klimda.nl/atletiek/images/Gallery00058.jpg" alt="Forest thumbnail">
             </div>
-            <div class="thumbnail" data-index="4" data-title="Arctic Wonder" data-description="The ethereal beauty of northern lights dancing across the Arctic sky." data-location="Iceland" data-photographer="Lars Peterson">
-              <img src="https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg" alt="Arctic thumbnail">
+            <div class="thumbnail" data-index="5" data-title="Arctic Wonder" data-description="The ethereal beauty of northern lights dancing across the Arctic sky." data-location="Iceland" data-photographer="Lars Peterson">
+              <img src="https://www.klimda.nl/atletiek/images/Gallery00063.jpg" alt="Arctic thumbnail">
             </div>
           </div>
         </main>
         
         <footer>
-          <p>&copy; 2025 Elegant Gallery. All rights reserved.</p>
+          <p>&copy; 2025 klimda.nl All rights reserved.</p>
         </footer>
       </div>
     </div>
     <script type="module" src="/scripts/gallery.js"></script>
     <script type="module" src="/scripts/nav.js"></script>
+    <script type="text/javascript">
+    var encE = "Y3ViZ2JAeHl2enFuLmF5";
+      const form = document.getElementById("contact");
+      form.setAttribute("href", "mailto:".concat(ende(atob(encE)))+"?subject=Website contact link");
+      function ende(a) {
+              return a.replace(/[a-zA-Z]/g, function(c){
+                    return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+              })
+      } 
+    </script>
   </body>
 </html>

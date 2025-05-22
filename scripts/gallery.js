@@ -10,39 +10,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // Store image data
   const imageData = [
     {
-      src: 'https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg',
-      title: 'Mountain Serenity',
-      description: 'A peaceful mountain lake reflecting the surrounding peaks at sunrise.',
-      location: 'Swiss Alps',
-      photographer: 'Alex Rivers'
+      src: 'https://www.klimda.nl/atletiek/images/Gallery00061.jpg',
+      title: 'Danick 2000m Steeple',
+      description: '15/08/2020, Barendrecht Twinson Energie Steeple Meeting .',
+      location: 'Barendrecht',
+      photographer: 'Koen Imholz'
     },
     {
-      src: 'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg',
-      title: 'Desert Sunset',
-      description: 'The vast expanse of a desert landscape bathed in the golden light of sunset.',
-      location: 'Sahara Desert',
-      photographer: 'Maya Johnson'
+      src: 'https://www.klimda.nl/atletiek/images/Gallery00057.jpg',
+      title: 'Bram 1000m',
+      description: '27/05/2017, Junioren C/D Poule 59 Wedstrijd 2.',
+      location: 'Spijkenisse',
+      photographer: 'Koen Imholz'
     },
     {
-      src: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg',
-      title: 'Coastal Dreams',
-      description: 'Waves gently lapping against a rocky coastline under a vibrant sky.',
-      location: 'Big Sur, California',
-      photographer: 'Thomas Wright'
+      src: 'https://www.klimda.nl/atletiek/images/Gallery00065.jpg',
+      title: 'Joanne 400m',
+      description: '09/04/2024 Competitie U20/U18 Poule 34 R3',
+      location: 'Zoetemeer',
+      photographer: 'Koen Imholz'
     },
     {
-      src: 'https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg',
-      title: 'Forest Mist',
-      description: 'A mystical forest shrouded in morning mist, with sunlight filtering through the trees.',
-      location: 'Black Forest, Germany',
-      photographer: 'Emma Chen'
+      src: 'https://www.klimda.nl/atletiek/images/Gallery00058.jpg',
+      title: 'Froukje 1000m',
+      description: '27/05/2017,Junioren C/D Poule 59 Wedstrijd 2',
+      location: 'Spijkenisse',
+      photographer: 'Koen Imholz'
     },
     {
-      src: 'https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg',
-      title: 'Arctic Wonder',
-      description: 'The ethereal beauty of northern lights dancing across the Arctic sky.',
-      location: 'Iceland',
-      photographer: 'Lars Peterson'
+      src: 'https://www.klimda.nl/atletiek/images/Gallery00063.jpg',
+      title: 'Elise 800m',
+      description: '05/06/2024 C.A.V. Xtra Energie Track Meeting ',
+      location: 'Barendrecht',
+      photographer: 'Koen Imholz'
     }
   ];
 
