@@ -43,7 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Grote Bonte Specht op zoek naar voedsel',
       location: 'Brunssummerheide',
       photographer: 'Koen Imholz'
-    }
+    },
+    {
+      src: '/img-gallery/Vogel1.JPG',
+      title: 'Goudhaan',
+      description: 'Europa’s kleinste vogel. Van snavel tot staartpunt meet hij slechts 9 cm',
+      location: 'Boswachterij Dorst',
+      photographer: 'Koen Imholz'
+    },
+     {
+      src: '/img-gallery/Vogel2.JPG',
+      title: 'Staartmees',
+      description: 'Staartmeezen geliefde bolletjes-met-staart-vogels',
+      location: 'Wervershoek',
+      photographer: 'Koen Imholz'
+      }
   ];
 
   // Function to create thumbnail element
@@ -140,23 +154,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeGallery();
 
   // Example of how to add new images:
-  addImagesToGallery([
-    {
-      src: '/img-gallery/Vogel1.JPG',
-      title: 'Goudhaan',
-      description: 'Europa’s kleinste vogel. Van snavel tot staartpunt meet hij slechts 9 cm',
-      location: 'Boswachterij Dorst',
-      photographer: 'Koen Imholz'
-    }
-   {
-      src: '/img-gallery/Vogel2.JPG',
-      title: 'Staartmees',
-      description: 'Staartmeezen geliefde bolletjes-met-staart-vogels',
-      location: 'Wervershoek',
-      photographer: 'Koen Imholz'
-    }
-  
-  ]);
+//  addImagesToGallery([
+ //   {
+ //     src: '/img-gallery/Vogel1.JPG',
+ //     title: 'Goudhaan',
+ //     description: 'Europa’s kleinste vogel. Van snavel tot staartpunt meet hij slechts 9 cm',
+ //     location: 'Boswachterij Dorst',
+ //     photographer: 'Koen Imholz'
+ //   }
+ //  
+ // ]);
   
   // Add smooth scroll animation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
