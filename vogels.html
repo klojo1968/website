@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klimda.nl Vogelfotografie</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/grid.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-left">
+            <button class="menu-toggle" aria-label="Toggle menu">
+              <span class="menu-icon"></span>
+            </button>
+            <div class="nav-items">
+              <a class="nav-button" href="index.html">Home</a>
+              <a class="nav-button" href="atletiek.html">Atletiek fotografie</a>
+              <div class="dropdown">
+                <button class="nav-button dropdown-toggle">Natuur fotografie</button>
+                <div class="dropdown-content">
+                  <a class="dropdown-item" href="vogels.html">Vogels</a>
+                  <a class="dropdown-item" href="http://www.klimda.nl/roofvogels.html">Roofvogels</a>
+                  <a class="dropdown-item" href="http://www.klimda.nl/zangvogels.html">Zangvogels</a>
+                  <a class="dropdown-item" href="http://www.klimda.nl/watervogels.html">Watervogels</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-right">
+            <img src="/img-gallery/Gallery00001.jpg" alt="Logo" class="logo">
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <header>
+          <h1>Vogelfotografie</h1>
+          <p class="subtitle">Een collectie foto's van vogels in hun natuurlijke omgeving</p>
+        </header>
+        
+        <main class="gallery-grid">
+          <!-- Text content area (columns 1-2) -->
+          <div class="text-content">
+            <div class="text-container">
+              <h2>Vogels fotograferen</h2>
+              <p>Het fotograferen van vogels vereist veel geduld en de juiste timing. Elke soort heeft zijn eigen gedrag en habitat, wat het vastleggen van deze prachtige dieren zo interessant maakt.</p>
+              <p>De foto's in deze collectie zijn gemaakt op verschillende locaties in Nederland, waaronder het Waalbos, de Wevershoek en de Brunssummerheide.</p>
+              
+              <div class="image-details">
+                <h4 id="image-title"></h4>
+                <p id="image-description"></p>
+                <p id="image-location"><span id="image-location-text"></span></p>
+                <p id="image-photographer"><span id="image-photographer-name"></span></p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Main image display area (columns 3-4) -->
+          <div class="main-image-container">
+            <div class="main-image-wrapper">
+              <img id="main-image" src="/img-gallery/Gallery00001.jpg" alt="No pic">
+            </div>
+          </div>
+          
+          <!-- Thumbnails area (column 5) -->
+          <div class="thumbnails-container">
+              <div class="thumbnail active" data-index="0">
+                    <img src="/img-gallery/Gallery00001.jpg" alt="Rietzanger"> </div>
+              <div class="thumbnail" data-index="1"> 
+                    <img src="/img-gallery/Gallery00002.jpg" alt="Blauwborst"> </div>
+              <div class="thumbnail" data-index="2">
+                    <img src="/img-gallery/Gallery00003.jpg" alt="Torenvalk"> </div>
+              <div class="thumbnail" data-index="3">
+                    <img src="/img-gallery/Gallery00004.jpg" alt="Honningbij"> </div>
+              <div class="thumbnail" data-index="4">
+                    <img src="/img-gallery/Gallery00005.jpg" alt="Grote Bonte Specht"> </div>
+          </div>
+        </main>
+        
+        <footer>
+          <p>&copy; 2025 klimda.nl All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="/scripts/gallery-vogels.js"></script>
+    <script type="module" src="/scripts/nav.js"></script>
+  </body>
+</html>
