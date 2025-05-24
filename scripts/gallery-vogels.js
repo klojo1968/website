@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Get DOM elements
   const mainImage = document.getElementById('main-image');
-  const thumbnails = document.querySelectorAll('.thumbnail');
+  const thumbnailsContainer = document.querySelector('.thumbnails-container');
   const imageTitle = document.getElementById('image-title');
   const imageDescription = document.getElementById('image-description');
   const imageLocation = document.getElementById('image-location-text');
@@ -46,12 +46,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  // Function to create thumbnail element
+  function createThumbnail(imageInfo, index, isActive = false) {
+    const thumbnail = document.createElement('div');
+    thumbnail.className = `thumbnail${isActive ? ' active' : ''}`;
+    thumbnail.setAttribute('data-index', index);
+
+    const img = document.createElement('img');
+    img.src = imageInfo.src;
+    img.alt = imageInfo.title;
+
+    thumbnail.appendChild(img);
+    return thumbnail;
+  }
+
+  // Function to initialize gallery
+  function initializeGallery() {
+    // Clear existing thumbnails
+    thumbnailsContainer.innerHTML = '';
+    
+    // Create and add thumbnails
+    imageData.forEach((data, index) => {
+      const thumbnail = createThumbnail(data, index, index === 0);
+      thumbnailsContainer.appendChild(thumbnail);
+    });
+
+    // Add event listeners to new thumbnails
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener('click', () => {
+        updateMainImage(index);
+      });
+      
+      thumbnail.addEventListener('mouseenter', () => {
+        if (window.matchMedia('(hover: hover)').matches) {
+          updateMainImage(index);
+        }
+      });
+    });
+
+    // Initialize with first image
+    updateMainImage(0);
+  }
+
+  // Function to add new images to the gallery
+  function addImagesToGallery(newImages) {
+    imageData.push(...newImages);
+    initializeGallery();
+  }
+
   // Function to update main image and details
   function updateMainImage(index) {
-    // Add fade-out class to create transition effect
     mainImage.style.opacity = '0';
     
-    // After a short delay, update the image and details
     setTimeout(() => {
       const data = imageData[index];
       mainImage.src = data.src;
@@ -61,34 +108,17 @@ document.addEventListener('DOMContentLoaded', () => {
       imageLocation.textContent = data.location;
       imagePhotographer.textContent = data.photographer;
       
-      // Remove the active class from all thumbnails
+      const thumbnails = document.querySelectorAll('.thumbnail');
       thumbnails.forEach(thumb => thumb.classList.remove('active'));
-      
-      // Add active class to the selected thumbnail
       thumbnails[index].classList.add('active');
       
-      // Fade the image back in
       mainImage.style.opacity = '1';
     }, 200);
   }
   
-  // Add click event listeners to thumbnails
-  thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener('click', () => {
-      updateMainImage(index);
-    });
-    
-    // Also add hover event for desktop devices
-    thumbnail.addEventListener('mouseenter', () => {
-      // Only update on hover if we're on a device that supports hover
-      if (window.matchMedia('(hover: hover)').matches) {
-        updateMainImage(index);
-      }
-    });
-  });
-  
   // Handle keyboard navigation
   document.addEventListener('keydown', (event) => {
+    const thumbnails = document.querySelectorAll('.thumbnail');
     const activeIndex = Array.from(thumbnails).findIndex(thumb => 
       thumb.classList.contains('active')
     );
@@ -106,8 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // Initialize with first image
-  updateMainImage(0);
+  // Initialize gallery
+  initializeGallery();
+
+  // Example of how to add new images:
+  // addImagesToGallery([
+  //   {
+  //     src: '/img-gallery/Gallery00006.jpg',
+  //     title: 'New Bird',
+  //     description: 'Description of the new bird',
+  //     location: 'Location',
+  //     photographer: 'Koen Imholz'
+  //   }
+  // ]);
   
   // Add smooth scroll animation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
