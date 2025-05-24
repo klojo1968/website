@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       photographer: 'Koen Imholz'
     },
      {
-      src: '/img-gallery/Vogel2.JPG',
+      src: '/img-gallery/vogel2.JPG',
       title: 'Staartmees',
       description: 'Staartmeezen geliefde bolletjes-met-staart-vogels',
       location: 'Wervershoek',
