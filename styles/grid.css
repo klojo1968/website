@@ -39,6 +39,7 @@
   border-radius: 12px;
   box-shadow: 0 8px 30px var(--color-shadow);
   transition: transform 0.3s ease;
+  aspect-ratio: 2/3;
 }
 
 .main-image-wrapper:hover {
@@ -102,4 +103,5 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  aspect-ratio: 2/3;
 }
