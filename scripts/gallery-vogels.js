@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const imageDescription = document.getElementById('image-description');
   const imageLocation = document.getElementById('image-location-text');
   const imagePhotographer = document.getElementById('image-photographer-name');
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+  const modalClose = document.querySelector('.modal-close');
   
   // Store image data
   const imageData = [
@@ -60,6 +64,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  // Function to open modal
+  function openModal(imageData) {
+    modal.style.display = 'block';
+    modalImg.src = imageData.src;
+    modalCaption.textContent = `${imageData.title} - ${imageData.location}`;
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+  }
+
+  // Function to close modal
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+
+  // Event listeners for modal
+  modalClose.onclick = closeModal;
+  modal.onclick = (e) => {
+    if (e.target === modal) closeModal();
+  };
+
+  // Handle escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+      closeModal();
+    }
+  });
+
   // Function to create thumbnails
   function createThumbnails() {
     const container = document.querySelector('.thumbnails-container');
@@ -76,6 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
       
       thumbnail.appendChild(img);
       container.appendChild(thumbnail);
+      
+      // Add click event for modal
+      img.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent thumbnail selection
+        openModal(data);
+      });
       
       thumbnail.addEventListener('click', () => updateMainImage(index));
       thumbnail.addEventListener('mouseenter', () => {
