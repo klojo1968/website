@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const imageGrid = document.querySelector('.image-grid');
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-image');
-  const closeBtn = document.querySelector('.close');
+  // Get DOM elements
+  const mainImage = document.getElementById('main-image');
+  const thumbnails = document.querySelectorAll('.thumbnail');
   const imageTitle = document.getElementById('image-title');
   const imageDescription = document.getElementById('image-description');
   const imageLocation = document.getElementById('image-location-text');
   const imagePhotographer = document.getElementById('image-photographer-name');
-
-  // Image data
+  
+  // Store image data
   const imageData = [
     {
       src: '/img-gallery/Gallery00001.jpg',
@@ -61,45 +60,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  // Create grid items
-  imageData.forEach(data => {
-    const gridItem = document.createElement('div');
-    gridItem.className = 'grid-item';
+  // Function to create thumbnails
+  function createThumbnails() {
+    const container = document.querySelector('.thumbnails-container');
+    container.innerHTML = ''; // Clear existing thumbnails
     
-    const img = document.createElement('img');
-    img.src = data.src;
-    img.alt = data.title;
-    
-    gridItem.appendChild(img);
-    imageGrid.appendChild(gridItem);
+    imageData.forEach((data, index) => {
+      const thumbnail = document.createElement('div');
+      thumbnail.className = `thumbnail${index === 0 ? ' active' : ''}`;
+      thumbnail.setAttribute('data-index', index);
+      
+      const img = document.createElement('img');
+      img.src = data.src;
+      img.alt = data.title;
+      
+      thumbnail.appendChild(img);
+      container.appendChild(thumbnail);
+      
+      thumbnail.addEventListener('click', () => updateMainImage(index));
+      thumbnail.addEventListener('mouseenter', () => {
+        if (window.matchMedia('(hover: hover)').matches) {
+          updateMainImage(index);
+        }
+      });
+    });
+  }
 
-    // Add click event to open modal
-    gridItem.addEventListener('click', () => {
-      modalImg.src = data.src;
+  // Function to update main image and details
+  function updateMainImage(index) {
+    mainImage.style.opacity = '0';
+    
+    setTimeout(() => {
+      const data = imageData[index];
+      mainImage.src = data.src;
+      mainImage.alt = data.title;
       imageTitle.textContent = data.title;
       imageDescription.textContent = data.description;
       imageLocation.textContent = data.location;
       imagePhotographer.textContent = data.photographer;
-      modal.style.display = 'block';
-    });
-  });
-
-  // Close modal when clicking the close button
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Close modal when clicking outside the image
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
+      
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      thumbnails.forEach(thumb => thumb.classList.remove('active'));
+      thumbnails[index].classList.add('active');
+      
+      mainImage.style.opacity = '1';
+    }, 200);
+  }
+  
+  // Handle keyboard navigation
+  document.addEventListener('keydown', (event) => {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const activeIndex = Array.from(thumbnails).findIndex(thumb => 
+      thumb.classList.contains('active')
+    );
+    
+    let newIndex = activeIndex;
+    
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      newIndex = (activeIndex + 1) % thumbnails.length;
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      newIndex = (activeIndex - 1 + thumbnails.length) % thumbnails.length;
+    }
+    
+    if (newIndex !== activeIndex) {
+      updateMainImage(newIndex);
     }
   });
-
-  // Close modal with escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      modal.style.display = 'none';
-    }
-  });
+  
+  // Initialize gallery
+  createThumbnails();
+  updateMainImage(0);
 });
