@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       src: '/img-gallery/Vogel1.JPG',
       title: 'Goudhaan',
-      description: 'Europa's kleinste vogel. Van snavel tot staartpunt meet hij slechts 9 cm',
+      description: 'Europa\'s kleinste vogel. Van snavel tot staartpunt meet hij slechts 9 cm',
       location: 'Boswachterij Dorst',
       photographer: 'Koen Imholz'
     },
