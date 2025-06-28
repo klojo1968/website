@@ -1,4 +1,3 @@
-// Shared gallery functionality
 export class GalleryManager {
   constructor(imageData, options = {}) {
     this.imageData = imageData;
@@ -53,7 +52,6 @@ export class GalleryManager {
       thumbnail.appendChild(img);
       this.thumbnailsContainer.appendChild(thumbnail);
       
-      // Add modal functionality if enabled
       if (this.options.enableModal) {
         img.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -61,10 +59,8 @@ export class GalleryManager {
         });
       }
       
-      // Add thumbnail selection
       thumbnail.addEventListener('click', () => this.updateMainImage(index));
       
-      // Add hover preview for desktop
       if (this.options.hoverPreview) {
         thumbnail.addEventListener('mouseenter', () => {
           if (window.matchMedia('(hover: hover)').matches) {
@@ -94,7 +90,6 @@ export class GalleryManager {
       if (this.imageLocation) this.imageLocation.textContent = data.location;
       if (this.imagePhotographer) this.imagePhotographer.textContent = data.photographer;
       
-      // Update active thumbnail
       const thumbnails = document.querySelectorAll('.thumbnail');
       thumbnails.forEach(thumb => thumb.classList.remove('active'));
       if (thumbnails[index]) thumbnails[index].classList.add('active');
@@ -122,7 +117,6 @@ export class GalleryManager {
   }
 
   bindEvents() {
-    // Modal events
     if (this.options.enableModal && this.modal) {
       this.modalClose.onclick = () => this.closeModal();
       this.modal.onclick = (e) => {
@@ -130,7 +124,6 @@ export class GalleryManager {
       };
     }
 
-    // Keyboard navigation
     if (this.options.keyboardNavigation) {
       document.addEventListener('keydown', (event) => {
         if (this.modal && this.modal.style.display === 'block') {
@@ -153,16 +146,5 @@ export class GalleryManager {
         }
       });
     }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
   }
 }

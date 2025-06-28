@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navItems.classList.toggle('active');
   });
 
-  // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.navbar')) {
       menuToggle.classList.remove('active');
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle dropdown on mobile
   if (window.matchMedia('(max-width: 768px)').matches) {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     
