@@ -338,6 +338,7 @@ footer {
   display: block;
   top: 50%;
   transform: translateY(-50%);
+  object-fit: contain;
 }
 
 .modal-close {

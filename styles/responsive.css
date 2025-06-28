@@ -53,7 +53,7 @@
   
   .main-image-wrapper {
     height: auto;
-    aspect-ratio: 2/3;
+    min-height: 400px;
   }
   
   .thumbnails-container {
@@ -68,6 +68,7 @@
   
   .thumbnail {
     width: calc(50% - var(--space-1));
+    aspect-ratio: 1;
   }
   
   .image-details {
@@ -98,7 +99,7 @@
   
   .main-image-wrapper {
     height: auto;
-    aspect-ratio: 2/3;
+    min-height: 300px;
   }
   
   .thumbnails-container {
@@ -110,6 +111,7 @@
   
   .thumbnail {
     width: calc(33.33% - var(--space-1));
+    aspect-ratio: 1;
   }
   
   .image-details {
@@ -144,12 +146,12 @@
   
   .main-image-wrapper {
     height: auto;
-    aspect-ratio: 2/3;
+    min-height: 250px;
   }
   
   .thumbnail {
     width: calc(50% - 0.5rem);
-    aspect-ratio: 2/3;
+    aspect-ratio: 1;
   }
   
   .image-details {
